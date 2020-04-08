@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="text-align:center">
+    <a href="/home">Go back</a>
+    {% if error %}
+    {{error}}
+    {% endif %}
+    <style type="text/css">
+    	table, th, td{
+    		border: 1px solid black;
+    	}
+    </style>
+    <h1>Photos:</h1>
+    <table>
+      <th>Photo ID</th>
+      <th>Photo Link</th>
+      <th>Poster: First Name</th>
+      <th>Poster: Last Name</th>
+      <th>Date Posted</th>
+      <th>Tagged User</th>
+      <th>User's First Name</th>
+      <th>User's Last Name</th>
+      <th>User Reacted</th>
+      <th>Emoji</th>
+      {% for line in pID%}
+      <tr>
+        <td>{{line.pID}}</td>
+        <td><img src="line.filePath"></td>
+        <td>{{line.firstName}}</td>
+        <td>{{line.lastName}}</td>
+        <td>{{line.postingDate}}</td>
+        <td>{{line.Tagged_user}}</td>
+        <td>{{line.Tagged_fName}}</td>
+        <td>{{line.Tagged_lName}}</td>
+        <td>{{line.Reacted_user}}</td>
+        <td>{{line.emoji}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
