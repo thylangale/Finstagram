@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style= "text-align:center">
+    <h1>Enter the username of the user you want to follow!</h1>
+    {% if success %}
+    {{success}}
+    {% endif %}
+    {% if error %}
+    {{error}}
+    {% endif %}
+    <br>
+    <form action="/followUser" method="POST">
+      <input type="text" name = "follow" placeholder="Enter username" required/> <br>
+      <br>
+      <input type="submit" value = Follow />
+
+    </form>
+    <br>
+    <a href="/home">Go back</a>
+  </body>
+</html>

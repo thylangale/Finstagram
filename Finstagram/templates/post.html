@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="text-align:center">
+    <h1>Post your Pics!</h1>
+    {% if success %}
+    {{success}}
+    {% endif %}
+    {% if error %}
+    {{error}}
+    {% endif %}
+    <br>
+    <form action="/postPhoto" method="POST">
+      <input type="text" name = "location" placeholder="Enter Photo location" required/> <br>
+      <br>
+      <input type="text" name = "allFollowers" placeholder="All Followers: yes or no?" required/> <br>
+      <br>
+      <input type="text" name = "caption" placeholder="Caption" required/> <br>
+      <br>
+      <input type="submit" value = Post />
+
+    </form>
+    <br>
+    <a href="/home">Go back</a>
+  </body>
+</html>
